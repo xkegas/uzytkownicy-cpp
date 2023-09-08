@@ -6,7 +6,6 @@ struct Osoba
 {
     string imie;
     string nazwisko;
-    bool usuniety;
 };
 
 int Menu();
@@ -36,7 +35,6 @@ int Menu()
     cout << "2 - Wypisz uzytkownikow " << endl;
     cout << "3 - Wyszukaj uzytkownika " << endl;
     cout << "4 - Zapisz uzytkownikow do pliku " << endl;
-    cout << "5 - Odczytaj dane z pliku " << endl;
     cout << "Cokolwiek innego = wyjscie z programu " << endl;
     cin >> wybor;
     return wybor;
@@ -97,14 +95,11 @@ void Wyswietl(int& aktualny_uzytkownik, Osoba* osoba)
     system("cls");
     for (int i = 0; i < aktualny_uzytkownik; i++)
     {
-        if (!osoba[i].usuniety)
-        {
-            cout << "------------------------------------" << endl;
-            cout << "Osoba nr. " << i + 1 << endl;
-            cout << "Imie: " << osoba[i].imie << endl;
-            cout << "Nazwisko: " << osoba[i].nazwisko << endl;
-            cout << "------------------------------------" << endl;
-        }
+        cout << "------------------------------------" << endl;
+        cout << "Osoba nr. " << i + 1 << endl;
+        cout << "Imie: " << osoba[i].imie << endl;
+        cout << "Nazwisko: " << osoba[i].nazwisko << endl;
+        cout << "------------------------------------" << endl;   
     }
 }
 
